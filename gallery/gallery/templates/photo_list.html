@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>Welcome to the Gallery App</h1>
+    {% for photo in photos %}
+  <figure>
+    <a href="{% url 'photo_detail' pk=photo.pk %}">
+      <img src="{{ photo.image.url }}" alt="{{ photo.title }}" width="300" height="200" title="{{ photo.title }}"/>
+      <figcaption>{{ photo.title }}</figcaption>
+    </a>
+  </figure>
+{% endfor %}
+{% endblock %}

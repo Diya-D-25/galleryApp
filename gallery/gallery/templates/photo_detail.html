@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <figure>
+    <img src="{{ photo.image.url }}" alt="{{ photo.title }}" width="800" height="450" title="{{ photo.title }}"/>
+    <a href="{% url 'photo_list' %}">Back to Photo List</a>
+    <figcaption>{{ photo.title }}</figcaption>
+    <p>Added on: {{ photo.created_at }}</p>
+  </figure>
+{% endblock %}
